@@ -8,7 +8,7 @@
   <body>
     <section class="sec">
       <header>
-        <a href="#"><img src="./logo.png" alt="logo" class="logo"> </a>
+        <a href="#"><img src="./logo.png" alt="logo" class="logo" onclick="logoHome()"> </a>
         <ul>
           <li><a href="#">Home</a> </li>
           <li><a href="#">SoftDrinks</a> </li>
@@ -28,9 +28,9 @@
         </div>
       </div>
       <ul class="thumb">
-        <li><a href="#"><img src="./coc.png" alt="" onclick="change('./coc.png','#DF272F')"> </a> </li>
-        <li><a href="#"><img src="./sprite.png" alt="" onclick="change('./sprite.png','#029952')"> </a> </li>
-        <li><a href="#"><img src="./pepsi.png" alt="" onclick="change('./pepsi.png','#25282A')"> </a> </li>
+        <li><a href="#"><img src="./coc.png" alt="" onclick="change('./coc.png','#DF272F','#ff660c','#000000')"> </a> </li>
+        <li><a href="#"><img src="./sprite.png" alt="" onclick="change('./sprite.png','#029952','#3634d7','#cdcf41')"> </a> </li>
+        <li><a href="#"><img src="./pepsi.png" alt="" onclick="change('./pepsi.png','#25282A','#fb1818','#fff')"> </a> </li>
       </ul>
       <ul class="sci">
         <li><a href="#"><img src="./facebook.png" alt=""> </a> </li>
@@ -39,10 +39,24 @@
       </ul>
     </section>
     <script type="text/javascript">
-      function change(url,bgcolor){
+      function change(url,bgcolor,H2,P){
         document.querySelector('.coc').src=url;
         const sec=document.querySelector('.sec');
         sec.style.background = bgcolor;
+        const texts = document.querySelector(".textBox ");
+        texts.firstElementChild.style.color = H2;
+        const paras = document.querySelector(".textBox :nth-child(2)");
+        paras.style.color=P;
+        console.log(paras,"data")
+      }
+
+      function logoHome(){
+        const sec=document.querySelector('.sec');
+        sec.style.backgroundImage = 'url("./cool-background.png")';
+        sec.style.backgroundRepeat= "no-repeat";
+        sec.style.backgroundSize=  "cover";
+       const texts = document.querySelector(".textbox");
+       texts.style.color="#1a0b03"
       }
     </script>
   </body>
